@@ -5,7 +5,7 @@ const path = require("path");
 const { execSync } = require("child_process");
 
 // Get the destination path
-const destPath = process.argv[2] || ".";
+const destPath = process.argv[2] || "js-ts-backjoon-template";
 
 // Copy template files to destination
 function copyTemplateFiles(srcDir, destDir) {

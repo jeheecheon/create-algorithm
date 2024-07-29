@@ -1,14 +1,17 @@
 {
     "scripts": {
-        "ts": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
-        "js": "nodemon --watch src --ext js --exec node src/main.js",
-        "lint": "eslint src/**/*.{js,ts}"
+        "ts": "concurrently -k -s first \"yarn lint:watch\" \"yarn ts:watch\"",
+        "lint": "eslint src/**/*.{ts,js}",
+        "lint:watch": "nodemon --watch src --ext ts --exec \"eslint src/**/*.{ts,js} --fix\"",
+        "ts:watch": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
+        "js": "nodemon --watch src --ext js --exec node src/index.js"
     },
     "packageManager": "yarn@4.3.1",
     "devDependencies": {
         "@eslint/js": "^9.8.0",
         "@types/eslint": "^9",
         "@types/node": "^22.0.0",
+        "concurrently": "^8.2.2",
         "eslint": "9.x",
         "globals": "^15.8.0",
         "nodemon": "^3.1.4",
