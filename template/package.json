@@ -1,0 +1,20 @@
+{
+    "scripts": {
+        "ts": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
+        "js": "nodemon --watch src --ext js --exec node src/main.js",
+        "lint": "eslint src/**/*.{js,ts}"
+    },
+    "packageManager": "yarn@4.3.1",
+    "devDependencies": {
+        "@eslint/js": "^9.8.0",
+        "@types/eslint": "^9",
+        "@types/node": "^22.0.0",
+        "eslint": "9.x",
+        "globals": "^15.8.0",
+        "nodemon": "^3.1.4",
+        "ts-node": "^10.9.2",
+        "tsc": "^2.0.4",
+        "typescript": "^5.5.4",
+        "typescript-eslint": "^7.17.0"
+    }
+}
