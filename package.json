@@ -1,5 +1,5 @@
 {
-  "name": "create-jsts-backjoon",
+  "name": "create-js-ts-backjoon",
   "version": "1.0.0",
   "description": "Create a JavaScript/TypeScript project template for solving backjoon problems",
   "main": "index.js",
@@ -14,5 +14,10 @@
   ],
   "author": "Jehee Cheon <jeheecheon@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeheecheon/create-js-ts-backjoon/issues",
+    "email": "jeheecheon@gmail.com"
+  },
+  "homepage": "https://jeheecheon.com",
   "dependencies": {}
 }
