@@ -8,7 +8,6 @@ typescript 또는 javascript로 백준 알고리즘 문제를 별다른 세팅�
 - 파일 변화 추적 및 재실행 (nodemon).  
 - 예제 입력 파일 변화 시에도 재실행.
 <br/>
-<br/>
 
 # 사용 방법
 ## 소스코드 입력
@@ -16,19 +15,17 @@ typescript 또는 javascript로 백준 알고리즘 문제를 별다른 세팅�
 - javascript: `src/main.js`
 - typescript: `src/main.ts`
 <br/>
-<br/>
 
 ## 커맨드
 사용하시는 언어에 맞는 커맨트를 입력해주시면 파일 변화에 따라 재실행됩니다.
 - `yarn run js`
 - `yarn run ts`
 <br/>
-<br/>
 
 ## 예제 입력
 `src/input.txt` 에 입력해주시면 됩니다. 
-<br/>
-<br/>
+<br/>  
+<br/>  
 
 # License
 This project is licensed under the MIT License.
