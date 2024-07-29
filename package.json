@@ -1,17 +1,17 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "js-ts-backjoon-template",
   "description": "Create a JavaScript/TypeScript project template for solving backjoon problems",
   "author": "Jehee Cheon <jeheecheon@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeheecheon/create-js-ts-backjoon/issues",
+    "url": "https://github.com/jeheecheon/js-ts-backjoon-template/issues",
     "email": "jeheecheon@gmail.com"
   },
   "homepage": "https://jeheecheon.com",
   "main": "index.js",
   "bin": {
-    "create-jsts-backjoon": "index.js"
+    "js-ts-backjoon-template": "index.js"
   },
   "keywords": [
     "template",
