@@ -1,4 +1,4 @@
-# js-ts-backjoon-template
+# create-js-ts-backjoon
 typescript 또는 javascript로 백준 알고리즘 문제를 별다른 세팅없이 곧바로 시작할 수 있는 템플릿입니다.
 <br/>
 <br/>
@@ -11,7 +11,9 @@ typescript 또는 javascript로 백준 알고리즘 문제를 별다른 세팅�
 
 ## 설치 방법
 아래 커맨드로 템플릿 프로젝트 설치  
-`npx js-ts-backjoon-template`  
+`npx create-js-ts-backjoon`
+또는
+`npm create js-ts-backjoon`
 <br/>
 <br/>
 
