@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.6",
   "name": "create-js-ts-backjoon",
   "description": "Create a JavaScript/TypeScript project template for solving backjoon problems",
   "author": "Jehee Cheon <jeheecheon@gmail.com>",

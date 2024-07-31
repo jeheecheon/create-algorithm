@@ -30,8 +30,4 @@ if (!fs.existsSync(destPath)) {
 const templateDir = path.join(__dirname, "template");
 copyTemplateFiles(templateDir, destPath);
 
-// Install dependencies
-console.log("Installing dependencies...");
-execSync("yarn install", { stdio: "inherit", cwd: destPath });
-
 console.log("Project setup complete!");

@@ -10,10 +10,15 @@ typescript 또는 javascript로 백준 알고리즘 문제를 별다른 세팅�
 <br/>
 
 ## 설치 방법
-아래 커맨드로 템플릿 프로젝트 설치  
-`npx create-js-ts-backjoon`
-또는
-`npm create js-ts-backjoon`
+먼저 yarn package manager 설치  
+`npm install --global yarn`  
+
+아래 커맨드로 템플릿 설치  
+`yarn create js-ts-backjoon@latest`  
+
+마지막으로 아래 커맨드 입력.
+`yarn install`
+
 <br/>
 <br/>
 
