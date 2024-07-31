@@ -16,7 +16,7 @@
 
 3. 원하는 경로에서 아래 커맨드로 템플릿 설치 및 다운로드.  
    backjoon 폴더가 생성됩니다.  
-   `yarn create backjoon@latest`
+   `yarn create backjoon`
 
 4. `cd backjoon` 으로 설치된 폴더로 경로 이동.
 
