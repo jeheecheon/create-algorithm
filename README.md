@@ -1,12 +1,13 @@
 # create-algorithm
+알고리즘 코드, 예제입력 수정 시 자동으로 재실행되도록 세팅된 템플렛입니다.  
+알고리즘 문제를 세팅없이 곧바로 시작을 도와줍니다.  
 
-알고리즘 코드, 예제입력 수정 시 자동으로 재실행되도록 세팅된 템플렛입니다.
-알고리즘 문제를 세팅없이 곧바로 시작을 도와줍니다. 
+![example](https://github.com/user-attachments/assets/5707bf1f-c29a-4a49-84eb-51f3ecc2853b)
 
 ## 주요 기능
 - js, ts 문법+스타일 검사 (prettier, eslint)
-- 파일 변화 추적 및 재실행 (nodemon)
-- 예제 입력 파일 변화 시에도 재실행
+- 파일 변화 추적 및 자동 재실행 (nodemon)
+- 예제 입력 파일 수정 시 자동 재실행
 
 ## 설치 방법
 1. npm 설치 안 되어있는 경우 [Nodejs](https://nodejs.org/en) 설치해주세요.
