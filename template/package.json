@@ -2,8 +2,8 @@
     "scripts": {
         "ts": "concurrently -k -s first \"yarn lint:watch\" \"yarn ts:watch\"",
         "lint:watch": "nodemon --watch src --ext ts --exec \"eslint src/**/*.ts --fix\"",
-        "ts:watch": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
-        "js": "nodemon --watch src --ext js --exec node src/main.js"
+        "ts:watch": "nodemon --watch src --ext ts --ext txt --exec ts-node src/main.ts",
+        "js": "nodemon --watch src --ext js --ext txt --exec node src/main.js"
     },
     "packageManager": "yarn@4.3.1",
     "devDependencies": {
