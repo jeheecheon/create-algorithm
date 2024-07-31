@@ -10,7 +10,8 @@
 -   문법+스타일 검사 (prettier, eslint).
 -   파일 변화 추적 및 재실행 (nodemon).
 -   예제 입력 파일 변화 시에도 재실행.
-    <br/>
+
+<br/>
 
 ## 설치 방법
 1. npm 설치 안 되어있는 경우 [Nodejs](https://nodejs.org/en) 설치.
@@ -36,7 +37,6 @@ backjoon 폴더가 생성됩니다.
 `yarn install`
 
 <br/>
-<br/>
 
 # 사용 방법
 
@@ -47,7 +47,8 @@ backjoon 폴더가 생성됩니다.
 -   javascript: `src/main.js`
 -   typescript: `src/main.ts`
 -   cpp: `src/main.cpp`
-    <br/>
+
+<br/>
 
 ## 커맨드
 
@@ -56,7 +57,8 @@ backjoon 폴더가 생성됩니다.
 -   `yarn run js`
 -   `yarn run ts`
 -   `yarn run cpp`
-    <br/>
+
+<br/>
 
 ## 예제 입력
 
