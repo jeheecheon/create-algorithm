@@ -1,18 +1,18 @@
 {
-  "version": "1.0.3",
-  "name": "create-backjoon",
-  "description": "Create a template for solving backjoon problems",
+  "version": "1.0.8",
+  "name": "create-algorithm",
+  "description": "Create a template for solving algorithm problems",
   "author": "Jehee Cheon <jeheecheon@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeheecheon/create-backjoon/issues",
+    "url": "https://github.com/jeheecheon/create-algorithm/issues",
     "email": "jeheecheon@gmail.com"
   },
   "homepage": "https://jeheecheon.com",
   "main": "index.js",
   "bin": {
-    "create-backjoon": "index.js",
-    "backjoon": "index.js"
+    "create-algorithm": "index.js",
+    "algorithm": "index.js"
   },
   "keywords": [
     "template",
@@ -21,7 +21,7 @@
     "cpp",
     "c++",
     "algorithm",
-    "backjoon"
+    "baekjoon"
   ],
   "dependencies": {}
 }

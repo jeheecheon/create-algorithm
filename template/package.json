@@ -1,23 +1,31 @@
 {
     "scripts": {
-        "ts": "concurrently -k -s first \"yarn ts:lint:watch\" \"yarn ts:run:watch\"",
-        "ts:lint:watch": "nodemon --watch src --ext ts --exec \"eslint src/**/*.ts --fix\"",
-        "ts:run:watch": "nodemon --watch src --ext ts,txt --exec \"ts-node src/main.ts\"",
         "js": "nodemon --watch src --ext js,txt --exec \"node src/main.js\"",
-        "cpp": "nodemon --watch src --ext cpp,txt --exec \"node run-cpp.js\""
+        "ts": "nodemon --watch src --ext ts,txt --exec \"npm run ts:exec\"",
+        "ts:exec": "concurrently \"npm run ts:lint\" \"npm run ts:run\"",
+        "ts:lint": "eslint src/**/*.ts --fix",
+        "ts:run": "ts-node src/main.ts",
+        "cpp": "concurrently \"npm run cpp:compile\" \"npm run cpp:run\"",
+        "cpp:exec": "concurrently \"npm run cpp:compile\" \"npm run cpp:run\"",
+        "cpp:compile": "nodemon --watch src --ext ts --exec \"g++ -o src/main.out src/main.cpp\"",
+        "cpp:run": "nodemon --watch src --ext out,txt --exec \"node run-cpp.mjs\""
     },
-    "packageManager": "yarn@4.3.1",
+    "nodemonConfig": {
+        "events": {
+            "start": "node -e console.clear()"
+        }
+    },
     "devDependencies": {
         "@eslint/js": "^9.8.0",
-        "@types/eslint": "^9",
+        "@types/eslint": "^9.6.0",
         "@types/node": "^22.0.0",
         "concurrently": "^8.2.2",
-        "eslint": "9.x",
+        "eslint": "^8.57.0",
         "globals": "^15.8.0",
         "nodemon": "^3.1.4",
         "ts-node": "^10.9.2",
         "tsc": "^2.0.4",
         "typescript": "^5.5.4",
-        "typescript-eslint": "^7.17.0"
+        "typescript-eslint": "^7.18.0"
     }
 }

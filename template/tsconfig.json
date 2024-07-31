@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es6", // ECMAScript의 버전
-        "module": "commonjs", // 모듈 시스템
-        "strict": true, // 엄격한 타입 검사를 활성화
-        "esModuleInterop": true, // CommonJS와 ES6 모듈 간의 상호 운용성
-        "skipLibCheck": true, // 라이브러리 타입 검사 생략
-        "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 일관성 강제
-        "outDir": "./dist", // 컴파일된 파일이 저장될 디렉토리
-        "rootDir": "./src" // 소스 파일이 위치하는 디렉토리
+        "target": "es6",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist",
+        "rootDir": "./src"
     },
-    "include": ["src/**/*.ts"], // 포함할 파일 또는 디렉토리
-    "exclude": ["dist", ".yarn"] // 제외할 파일 또는 디렉토리
+    "include": ["src/**/*.ts"],
+    "exclude": ["dist", ".yarn"]
 }
