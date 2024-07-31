@@ -2,6 +2,12 @@
 알고리즘 코드, 예제입력 수정 시 자동으로 재실행되도록 세팅된 템플렛입니다.  
 알고리즘 문제를 세팅없이 곧바로 시작을 도와줍니다.  
 
+## 지원 언어:
+- c++
+- javascript
+- typescript
+
+## 미리보기
 ![example](https://github.com/user-attachments/assets/5707bf1f-c29a-4a49-84eb-51f3ecc2853b)
 
 ## 주요 기능
