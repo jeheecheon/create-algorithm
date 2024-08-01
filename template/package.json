@@ -6,8 +6,7 @@
         "ts:lint": "eslint src/**/*.ts --fix",
         "ts:run": "ts-node src/main.ts",
         "cpp": "concurrently \"npm run cpp:compile\" \"npm run cpp:run\"",
-        "cpp:exec": "concurrently \"npm run cpp:compile\" \"npm run cpp:run\"",
-        "cpp:compile": "nodemon --watch src --ext ts --exec \"g++ -o src/main.out src/main.cpp\"",
+        "cpp:compile": "nodemon --watch src --ext cpp --exec \"g++ -o src/main.out src/main.cpp\"",
         "cpp:run": "nodemon --watch src --ext out,txt --exec \"node run-cpp.mjs\""
     },
     "nodemonConfig": {
