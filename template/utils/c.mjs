@@ -4,9 +4,9 @@ import { isWindows, srcDir } from "./paths.mjs";
 import run from "./run.mjs";
 
 const compileResultPath = path.join(srcDir, "/main.out");
-const sourceFilePath = path.join(srcDir, "/cpp/main.cpp");
+const sourceFilePath = path.join(srcDir, "/c/main.c");
 
-const compileCommand = "g++ -o main.out cpp/main.cpp";
+const compileCommand = "gcc -o main.out c/main.c";
 const runCommand = isWindows ? "main.out" : "./main.out";
 
 await run({

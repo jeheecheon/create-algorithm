@@ -10,6 +10,11 @@ TLDR: Automatically re-execute algorithm problem source code / Automatically gra
   
 ## Supported Languages:
 - C++
+- C#
+- C
+- Python
+- Java
+- Kotlin
 - JavaScript (partially unsupported - real-time test case testing unavailable)
 - TypeScript (partially unsupported - real-time test case testing unavailable)
 
@@ -27,18 +32,28 @@ npm create algorithm@latest
 ## Commands
 These commands automatically execute the code and test cases upon modification.  
 From the algorithm project folder, select and enter the command for your language:
+- `npm run cpp`
+- `npm run cs`
+- `npm run c`
+- `npm run py`
+- `npm run java`
+- `npm run kotlin`
 - `npm run js`
 - `npm run ts`
-- `npm run cpp`
 
 If you are a C++ user and do not have the GCC compiler installed, please install it from [MSYS2](https://www.msys2.org/).
  
 ## Source Code
 Enter your code in the source code file for your preferred language at the following paths.
 _Ensure to enter the appropriate command for the language you are using to enable automatic re-execution._
-- cpp: `src/main.cpp`
-- javascript: `src/main.js`
-- typescript: `src/main.ts`
+- C++: `src/cpp/main.cpp`
+- C#: `src/cs/Program.cs`
+- C: `src/c/main.c`
+- Python: `src/py/main.py`
+- Java: `src/java/Main.java`
+- Kotlin: `src/kt/Main.kt`
+- Javascript: `src/js/main.js`
+- Typescript: `src/ts/main.ts`
 
 ## Enable automatic re-grading feature
 To enable the automatic re-grading feature, you must enter // baekjoon problem_number at the very top of the source code. See the preview.  
@@ -47,7 +62,7 @@ Currently, only [boj](https://www.acmicpc.net/) is supported for this feature. O
 - [boj](https://www.acmicpc.net/): (boj | baekjoon | 벡준 | acmicpc)
 
 ## Custom Test Case
-For custom example input, enter the input in src/input.txt. The process will automatically restart upon modification.
+For custom example input, enter the input in `src/input.txt`. The process will automatically restart upon modification.
 
 # License
 This project is licensed under the MIT License.

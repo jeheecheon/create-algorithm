@@ -1,12 +1,11 @@
+import chalk from "chalk";
+import ora from "ora";
 import { execSync } from "child_process";
-
-import { createTestCaseFiles, removeAll } from "./inputFiles.mjs";
-import { fetchBaekJoonTestCases } from "./fetchTestCases.mjs";
 import { existsSync, readdirSync } from "fs";
 
-import { srcDir } from "./cpp.mjs";
-import ora from "ora";
-import chalk from "chalk";
+import { fetchBaekJoonTestCases } from "./fetchTestCases.mjs";
+import { createTestCaseFiles, removeAll } from "./inputFiles.mjs";
+import { srcDir } from "./paths.mjs";
 
 export async function runBaekJoonTestCases(id, runCommand) {
     const testCasesDir = ".baekjoon";
@@ -56,7 +55,8 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
             }).toString();
             const end = performance.now();
 
-            let succeeded = removeLeadingSpaces(output.trim()) === removeLeadingSpaces(testCase.output.trim());
+            let succeeded =
+                removeLeadingSpaces(output.trim()) === removeLeadingSpaces(testCase.output.trim());
             if (succeeded) {
                 spinner.succeed(chalk.bgMagentaBright(`Test Case ${i + 1} Passed`));
             } else {
