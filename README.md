@@ -19,14 +19,13 @@ TLDR: Automatically re-execute algorithm problem source code / Automatically gra
 - TypeScript (partially unsupported - real-time test case testing unavailable)
 
 ## Preview
-![example](https://github.com/user-attachments/assets/b56f9c2c-4f83-493e-a1e8-3f3f7d2f157c)
+![example](https://github.com/user-attachments/assets/ef653ec8-cbaf-4e85-a958-ff9a492fd459)
 
 ## Installation Instructions
-1. Install npm. Installation link:  
-[Nodejs](https://nodejs.org/en)
+1. Install npm. Installation link: [Nodejs](https://nodejs.org/en)
 2. In the terminal, navigate to the desired path for the project folder and enter the following command:  
-npm create algorithm@latest
-3. Open the generated project folder 'algorithm' with your preferred IDE.
+`npm create algorithm@latest`
+3. Open the generated project folder `algorithm` with your preferred IDE.
 
 # Usage Instructions
 ## Commands
@@ -56,13 +55,14 @@ _Ensure to enter the appropriate command for the language you are using to enabl
 - Typescript: `src/ts/main.ts`
 
 ## Enable automatic re-grading feature
-To enable the automatic re-grading feature, you must enter // baekjoon problem_number at the very top of the source code. See the preview.  
+To enable the automatic re-grading feature, you must enter  
+`// baekjoon problem_number` at the very top of the source code. Please see the preview.  
 
 Currently, only [boj](https://www.acmicpc.net/) is supported for this feature. Other platforms are not supported at this time. The following identifiers are treated the same:
 - [boj](https://www.acmicpc.net/): (boj | baekjoon | 벡준 | acmicpc)
 
 ## Custom Test Case
-For custom example input, enter the input in `src/input.txt`. The process will automatically restart upon modification.
+You can also add custom test case for each run! Enter your input in `src/input.txt` file. The process will automatically restart upon modification.
 
 # License
 This project is licensed under the MIT License.
