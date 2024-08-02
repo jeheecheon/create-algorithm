@@ -65,14 +65,12 @@ if (lines.length === 0) {
 
 // get first line
 const firstLine = lines[0].trim();
-const bojNumberMatch = firstLine.match(/^\/\/ boj (\d+)$/);
+const bojNumberMatch = firstLine.match(/^\/\/ (boj|backjoon|baekjoon|벡준|백준|acmicpc|\(boj\)|\(backjoon\)|\(baekjoon\)|\(벡준\)|\(백준\)|\(acmicpc\)) (\d+)$/);
 let bojNumber = null;
 
 // extract boj number
-if (bojNumberMatch) {
-    bojNumber = bojNumberMatch[1];
-    bojNumber = +bojNumber;
-}
+if (bojNumberMatch) 
+    bojNumber = +bojNumberMatch[2];
 
 // run baekjoon test cases
 if (!bojNumberMatch || isNaN(bojNumber) || !bojNumberMatch) {

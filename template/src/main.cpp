@@ -1,4 +1,4 @@
-// boj 5525
+// baekjoon 5525
 
 #include <iostream>
 

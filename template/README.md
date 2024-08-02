@@ -37,6 +37,12 @@ _Ensure to enter the appropriate command for the language you are using to enabl
 - javascript: `src/main.js`
 - typescript: `src/main.ts`
 
+## automatic re-grading feature
+To enable the automatic re-grading feature, you must enter // baekjoon problem_number at the very top of the source code. See the preview.  
+
+Currently, only [boj](https://www.acmicpc.net/) is supported for this feature. Other platforms are not supported at this time. The following identifiers are treated the same:
+- boj: (boj | baekjoon | 벡준 | acmicpc)
+
 ## Custom Test Case
 For custom example input, enter the input in src/input.txt. The process will automatically restart upon modification.
 
