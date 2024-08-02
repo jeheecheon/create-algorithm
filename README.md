@@ -8,7 +8,7 @@
 - typescript
 
 ## 미리보기
-![example](https://github.com/user-attachments/assets/b4d4f712-7a89-4615-88a0-0057f5be4fc5)
+![example](https://github.com/user-attachments/assets/ae39e704-9b58-43ef-b75a-41f0c0e44d4e)
 
 ## 주요 기능
 - js, ts 문법+스타일 검사 (prettier, eslint)
