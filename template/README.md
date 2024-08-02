@@ -19,7 +19,7 @@
 1. npm 설치 안 되어있는 경우 [Nodejs](https://nodejs.org/en) 설치해주세요.
 
 2. 원하는 경로에서 아래 커맨드 입력해주세요.  
-   `npm create algorithm`
+   `npm create algorithm@latest`
 
 4. 위 커맨드를 통해 생성된 프로젝트 폴더 'algorithm' 을 주로 사용하시는 IDE 로 오픈 후 사용해주세요.
 
