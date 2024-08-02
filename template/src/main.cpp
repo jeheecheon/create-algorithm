@@ -1,10 +1,45 @@
+// boj 5525
+
 #include <iostream>
 
 using namespace std;
 
-int main()
+int N, M;
+string str;
+
+int solve(bool shouldI, int i)
 {
-    string str;
-    cin >> str;
-    cout << "Hello, " << str;
+    if (i >= str.length() || (shouldI && str[i] == 'O') || (!shouldI && str[i] == 'I'))
+        return 0;
+
+    return solve(!shouldI, i + 1) + 1;
+}
+
+int main(void)
+{
+    cin.tie(0)->tie(0)->sync_with_stdio(0);
+
+    cin >> N >> M >> str;
+
+    int sum = 0;
+    for (int i = 0; i < str.length();) {
+
+        if (str[i] != 'I')
+            ++i;
+
+        int len = solve(true, i);
+        i += len;
+
+        if (str[i - 1] == 'O') {
+            --len;
+        }
+
+        len /= 2;
+
+        if (len >= N) {
+            sum += len - N + 1;
+        }
+    }
+
+    cout << sum;
 }

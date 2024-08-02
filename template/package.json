@@ -5,8 +5,7 @@
         "ts:exec": "concurrently \"npm run ts:lint\" \"npm run ts:run\"",
         "ts:lint": "eslint src/**/*.ts --fix",
         "ts:run": "ts-node src/main.ts",
-        "cpp": "nodemon --watch src --ext cpp,txt --exec \"node cpp.mjs\"",
-        "clear-terminal": "node -e console.clear()"
+        "cpp": "nodemon --watch src --ext cpp,txt --exec \"node ./utils/cpp.mjs\""
     },
     "nodemonConfig": {
         "events": {
@@ -25,5 +24,12 @@
         "tsc": "^2.0.4",
         "typescript": "^5.5.4",
         "typescript-eslint": "^7.18.0"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "cheerio": "^1.0.0-rc.12",
+        "dotenv": "^16.4.5",
+        "ora": "^8.0.1",
+        "perf_hooks": "^0.0.1"
     }
 }
