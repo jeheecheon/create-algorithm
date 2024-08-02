@@ -5,9 +5,8 @@
         "ts:exec": "concurrently \"npm run ts:lint\" \"npm run ts:run\"",
         "ts:lint": "eslint src/**/*.ts --fix",
         "ts:run": "ts-node src/main.ts",
-        "cpp": "concurrently \"npm run cpp:compile\" \"npm run cpp:run\"",
-        "cpp:compile": "nodemon --watch src --ext cpp,txt --exec \"g++ -o src/main.out src/main.cpp\"",
-        "cpp:run": "nodemon --watch src --ext out --exec \"node run-cpp.mjs\""
+        "cpp": "nodemon --watch src --ext cpp,txt --exec \"node cpp.mjs\"",
+        "clear-terminal": "node -e console.clear()"
     },
     "nodemonConfig": {
         "events": {
