@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "name": "create-algorithm",
   "description": "Create a template for solving algorithm problems",
   "author": "Jehee Cheon <jeheecheon@gmail.com>",
@@ -9,6 +9,10 @@
     "email": "jeheecheon@gmail.com"
   },
   "homepage": "https://blog.jeheecheon.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeheecheon/create-algorithm"
+  },
   "main": "index.js",
   "bin": {
     "create-algorithm": "index.js",
