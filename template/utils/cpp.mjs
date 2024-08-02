@@ -3,7 +3,6 @@ import { existsSync, unlinkSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
 import { runBaekJoonTestCases } from "./runTestCases.mjs";
-import dotenv from "dotenv";
 import ora from "ora";
 import chalk from "chalk";
 import { performance } from "perf_hooks";
@@ -20,7 +19,6 @@ const sourceFilePath = path.join(srcDir, "main.cpp");
 
 const runCommand = isWindows ? "main.out" : "./main.out";
 
-dotenv.config();
 
 // clear terminal
 console.clear();
@@ -31,7 +29,7 @@ if (existsSync(outputPath)) unlinkSync(outputPath);
 let spinner = ora("Compiling...").start();
 try {
     // compile
-    execSync(process.env.compileCommand, { stdio: "inherit", cwd: srcDir });
+    execSync("g++ -o main.out main.cpp", { stdio: "inherit", cwd: srcDir });
     spinner.succeed("Compiled successfully!");
 } catch (error) {
     spinner.fail("Failed to compile!");
