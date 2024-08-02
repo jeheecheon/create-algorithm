@@ -56,11 +56,11 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
             }).toString();
             const end = performance.now();
 
-            let succeeded = removeLeadingSpaces(output) === removeLeadingSpaces(testCase.output);
+            let succeeded = removeLeadingSpaces(output.trim()) === removeLeadingSpaces(testCase.output.trim());
             if (succeeded) {
                 spinner.succeed(chalk.bgMagentaBright(`Test Case ${i + 1} Passed`));
             } else {
-                spinner.fail(`Test Case ${i + 1} Failed`);
+                spinner.fail(chalk.bgMagentaBright(`Test Case ${i + 1} Failed`));
             }
             const t = {
                 idx: i + 1,
