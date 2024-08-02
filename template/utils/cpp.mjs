@@ -19,7 +19,6 @@ const sourceFilePath = path.join(srcDir, "main.cpp");
 
 const runCommand = isWindows ? "main.out" : "./main.out";
 
-
 // clear terminal
 console.clear();
 
