@@ -56,6 +56,5 @@
     },
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "C_Cpp.clang_format_style": "WebKit"
 }
