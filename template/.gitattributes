@@ -1,4 +1,1 @@
-.yarn/**            linguist-vendored
-.yarn/releases/*    binary linguist-vendored
-.yarn/plugins/**/*  binary linguist-vendored
-.yarn/sdks/**/*     binary linguist-vendored
+src/**/*                 linguist-vendored
