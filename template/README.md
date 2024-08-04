@@ -19,7 +19,7 @@ TLDR: Automatically re-execute algorithm problem source code / Automatically gra
 - TypeScript (partially unsupported - real-time test case testing unavailable)
 
 ## Preview
-![example](https://github.com/user-attachments/assets/ef653ec8-cbaf-4e85-a958-ff9a492fd459)
+![example](https://github.com/user-attachments/assets/480b41b1-ac1f-48a4-900b-a863109e478d)
 
 ## Installation Instructions
 1. Install npm. Installation link: [Nodejs](https://nodejs.org/en)
