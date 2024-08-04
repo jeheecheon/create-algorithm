@@ -1,5 +1,8 @@
 // baekjoon 5525
 
+// You must write a problem number like the one above to run the test cases.
+// Modifying the source code file or the src/input.txt file will restart the process.
+
 import java.io.*
 
 fun main() {
