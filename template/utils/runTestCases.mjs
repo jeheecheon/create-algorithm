@@ -10,6 +10,9 @@ import { srcDir } from "./paths.mjs";
 export async function runBaekJoonTestCases(id, runCommand) {
     const testCasesDir = ".baekjoon";
 
+    // remove test case files
+    removeAll(testCasesDir);
+
     // fetch test cases
     const testCases = await fetchBaekJoonTestCases(id);
 
@@ -24,7 +27,7 @@ export async function runBaekJoonTestCases(id, runCommand) {
     runWithTestCases(runCommand, testCasesDir, testCases);
 
     // remove test case files
-    removeAll(".baekjoon");
+    removeAll(testCasesDir);
 }
 
 function runWithTestCases(runCommand, testCasesdir, testCases) {
@@ -49,10 +52,12 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
             const runWithInputCmd = `${runCommand} < ../${testCasesdir}/${fileName}`;
 
             const start = performance.now();
+
             const output = execSync(runWithInputCmd, {
                 signal: AbortSignal.timeout(2000),
                 cwd: srcDir
             }).toString();
+
             const end = performance.now();
 
             let succeeded =
@@ -84,7 +89,10 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
 }
 
 function removeLeadingSpaces(str) {
-    return str.replace(/ +\n/g, "\n");
+    return str
+        .replace(/[ \t\r]+/g, " ")
+        .replace(/ +\n/g, "\n")
+        .trim();
 }
 
 function printTestCaseResult(t) {
