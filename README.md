@@ -1,3 +1,6 @@
+## Preview 미리보기
+![example](https://github.com/user-attachments/assets/480b41b1-ac1f-48a4-900b-a863109e478d)
+
 # create-algorithm
 Project Generator  
 TLDR: Automatically re-execute algorithm problem source code / Automatically grade example input and output
@@ -17,9 +20,6 @@ TLDR: Automatically re-execute algorithm problem source code / Automatically gra
 - Kotlin
 - JavaScript (partially unsupported - real-time test case testing unavailable)
 - TypeScript (partially unsupported - real-time test case testing unavailable)
-
-## Preview
-![example](https://github.com/user-attachments/assets/480b41b1-ac1f-48a4-900b-a863109e478d)
 
 ## Installation Instructions
 1. Install npm. Installation link: [Nodejs](https://nodejs.org/en)
