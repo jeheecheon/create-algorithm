@@ -1,10 +1,10 @@
 import path from "path";
+import { getSrcPath } from "./path.mjs";
 import run from "./run.mjs";
 
-const srcDir = path.resolve("src");
-const sourceFilePath = path.join(srcDir, "cs/Program.cs");
+const sourceFilePath = path.join(getSrcPath(), "cs/Program.cs");
 
-const runCommand = `dotnet run --project ${path.join(srcDir, "cs")}`;
+const runCommand = `dotnet run --project ${path.join(getSrcPath(), "cs")}`;
 
 await run({
     sourceFilePath,

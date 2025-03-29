@@ -1,9 +1,10 @@
-/**
- * Input
- */
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./src/input.txt";
-const input: string[] = require("fs").readFileSync(filePath).toString().trim().split("\n");
+const input: string[] = require("fs")
+    .readFileSync(process.platform === "linux" ? "/dev/stdin" : "./src/input.txt")
+    .toString()
+    .trim()
+    .split("\n")
+    .map((line: string) => line.trim());
 
-/**
- * Solution
- */
+(function solve() {
+    console.log("print answer here");
+})();

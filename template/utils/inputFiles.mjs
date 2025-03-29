@@ -1,19 +1,39 @@
-import { writeFileSync, existsSync, mkdirSync, readdirSync, unlinkSync, rmdirSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, rmdirSync, unlinkSync, writeFileSync } from "fs";
 import { join } from "path";
 
 export function createTestCaseFiles(dest, testCases) {
-    if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
+    if (!existsSync(dest)) {
+        try {
+            mkdirSync(dest, { recursive: true });
+        } catch (error) {
+            console.error("Failed to create test case directory!", error);
+            process.exit(1);
+        }
+    }
 
     testCases.forEach((tc, index) => {
-        writeFileSync(`${dest}/${index + 1}.txt`, tc.input, "utf-8");
+        try {
+            writeFileSync(`${dest}/${index + 1}.txt`, tc.input, "utf-8");
+        } catch (error) {
+            console.error("Failed to create test case file!", error);
+            process.exit(1);
+        }
     });
 }
 
-export function removeAll(dir) {
-    if (existsSync(dir)) {
-        const files = readdirSync(dir);
-        for (const file of files) unlinkSync(join(dir, file));
+export function removeAll(path) {
+    if (!existsSync(path)) {
+        return;
+    }
 
-        rmdirSync(dir);
+    try {
+        readdirSync(path).forEach((file) => {
+            unlinkSync(join(path, file));
+        });
+
+        rmdirSync(path);
+    } catch (error) {
+        console.error(`Failed to remove directory!: ${path}`, error);
+        process.exit(1);
     }
 }

@@ -1,48 +1,36 @@
 import chalk from "chalk";
-import ora from "ora";
 import { execSync } from "child_process";
 import { existsSync, readdirSync } from "fs";
+import ora from "ora";
 
 import { fetchBaekJoonTestCases } from "./fetchTestCases.mjs";
 import { createTestCaseFiles, removeAll } from "./inputFiles.mjs";
-import { srcDir } from "./paths.mjs";
+import { getSrcPath } from "./path.mjs";
 
-export async function runBaekJoonTestCases(id, runCommand) {
+export async function runBaekJoonTestCasesAsync(id, runCommand) {
     const testCasesDir = ".baekjoon";
 
-    // remove test case files
     removeAll(testCasesDir);
-
-    // fetch test cases
     const testCases = await fetchBaekJoonTestCases(id);
-
     if (!testCases) {
         return;
     }
 
-    // create test case files
     createTestCaseFiles(testCasesDir, testCases);
-
-    // run test cases
     runWithTestCases(runCommand, testCasesDir, testCases);
-
-    // remove test case files
     removeAll(testCasesDir);
 }
 
 function runWithTestCases(runCommand, testCasesdir, testCases) {
-    // check if test case files exist
     if (!existsSync(testCasesdir)) {
         return;
     }
 
-    // get test case files
     const files = readdirSync(testCasesdir);
     if (files.length === 0) {
         return;
     }
 
-    // run test cases
     for (let i = 0; i < files.length; ++i) {
         const fileName = files[i];
         const testCase = testCases[i];
@@ -52,21 +40,21 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
             const runWithInputCmd = `${runCommand} < ../${testCasesdir}/${fileName}`;
 
             const start = performance.now();
-
             const output = execSync(runWithInputCmd, {
                 signal: AbortSignal.timeout(2000),
-                cwd: srcDir,
+                cwd: getSrcPath(),
             }).toString();
-
             const end = performance.now();
 
-            let succeeded =
+            const succeeded =
                 removeLeadingSpaces(output.trim()) === removeLeadingSpaces(testCase.output.trim());
+
             if (succeeded) {
                 spinner.succeed(chalk.bgMagentaBright(`Test Case ${i + 1} Passed`));
             } else {
                 spinner.fail(chalk.bgMagentaBright(`Test Case ${i + 1} Failed`));
             }
+
             const t = {
                 idx: i + 1,
                 duration: (end - start).toFixed(0),

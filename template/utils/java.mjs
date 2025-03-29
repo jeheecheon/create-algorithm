@@ -1,10 +1,10 @@
 import path from "path";
 
-import { srcDir } from "./paths.mjs";
+import { getSrcPath } from "./path.mjs";
 import run from "./run.mjs";
 
-const compileResultPath = path.join(srcDir, "Main.class");
-const sourceFilePath = path.join(srcDir, "java/Main.java");
+const compileResultPath = path.join(getSrcPath(), "Main.class");
+const sourceFilePath = path.join(getSrcPath(), "java/Main.java");
 
 const compileCommand = "javac -d . ./java/Main.java";
 const runCommand = "java Main";
