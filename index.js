@@ -4,48 +4,58 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const projectPath = path.resolve(__dirname, "template");
+const srcPath = path.resolve(__dirname, "template");
 const destPath = process.argv[2] || "algorithm";
 
-(function createProjectDirectory() {
-  if (!fs.existsSync(destPath)) {
-    try {
-      fs.mkdirSync(destPath, { recursive: true });
-    } catch (error) {
-      console.error("Error creating project directory:", error);
-      process.exit(1);
-    }
-  }
-})();
-
-(function validateProjectPath() {
-  if (!fs.existsSync(projectPath)) {
+(function validateTemplatePath({ templatePath }) {
+  if (!fs.existsSync(templatePath)) {
     console.error("Error while locating template directory");
     process.exit(1);
   }
-})();
+})({
+  templatePath: srcPath,
+});
 
-(function downloadProject() {
+(function createProjectDirectory({ projectPath }) {
+  if (fs.existsSync(projectPath)) {
+    console.log("Project directory already exists. Exiting...");
+    process.exit(1);
+  }
+
   try {
-    fs.readdirSync(srcDir).forEach((file) => {
-      const srcFile = path.join(srcDir, file);
-      const destFile = path.join(destDir, file);
+    fs.mkdirSync(projectPath, { recursive: true });
+  } catch (error) {
+    console.error("Error creating project directory:", error);
+    process.exit(1);
+  }
+})({
+  projectPath: destPath,
+});
 
-      if (fs.lstatSync(srcFile).isDirectory()) {
-        // Create destination directory if it doesn't exist
-        fs.mkdirSync(destFile, { recursive: true });
-        // Recursively copy files from the source directory to the destination directory
-        copyTemplateFiles(srcFile, destFile);
+(function downloadProject({ projectPath, destPath }) {
+  try {
+    fs.readdirSync(projectPath).forEach((fileName) => {
+      const srcFilePath = path.join(projectPath, fileName);
+      const destFilePath = path.join(destPath, fileName);
+
+      if (fs.lstatSync(srcFilePath).isDirectory()) {
+        fs.mkdirSync(destFilePath, { recursive: true });
+        downloadProject({
+          projectPath: srcFilePath,
+          destPath: destFilePath,
+        });
       } else {
-        // Copy file
-        fs.copyFileSync(srcFile, destFile);
+        fs.copyFileSync(srcFilePath, destFilePath);
       }
     });
   } catch (error) {
     console.error("Error while downloading template files:", error);
     process.exit(1);
   }
-})();
+})({
+  projectPath: srcPath,
+  destPath,
+});
 
 (function installDependencies() {
   try {
