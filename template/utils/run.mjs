@@ -10,7 +10,7 @@ export default async function run({
     sourceFilePath,
     compileCommand,
     runCommand,
-    needsCompile = true
+    needsCompile = true,
 }) {
     // clear terminal
     console.clear();
@@ -61,10 +61,10 @@ export default async function run({
     // get first line
     const firstLine = lines[0].trim();
     const bojNumberMatch1 = firstLine.match(
-        /^\/\/ (boj|backjoon|baekjoon|벡준|백준|acmicpc|\(boj\)|\(backjoon\)|\(baekjoon\)|\(벡준\)|\(백준\)|\(acmicpc\)) (\d+)$/
+        /^\/\/ (boj|backjoon|baekjoon|벡준|백준|acmicpc|\(boj\)|\(backjoon\)|\(baekjoon\)|\(벡준\)|\(백준\)|\(acmicpc\)) (\d+)$/,
     );
     const bojNumberMatch2 = firstLine.match(
-        /^# (boj|backjoon|baekjoon|벡준|백준|acmicpc|\(boj\)|\(backjoon\)|\(baekjoon\)|\(벡준\)|\(백준\)|\(acmicpc\)) (\d+)$/
+        /^# (boj|backjoon|baekjoon|벡준|백준|acmicpc|\(boj\)|\(backjoon\)|\(baekjoon\)|\(벡준\)|\(백준\)|\(acmicpc\)) (\d+)$/,
     );
     let bojNumber = null;
 
@@ -87,14 +87,14 @@ export default async function run({
         execSync(`${runCommand} < input.txt`, {
             stdio: "inherit",
             cwd: srcDir,
-            signal: AbortSignal.timeout(2000)
+            signal: AbortSignal.timeout(2000),
         });
         const end = performance.now();
         const duration = end - start;
         console.log(
             `${chalk.blueBright("\nRan successfully in")} ${chalk.magentaBright(
-                `${duration.toFixed(2)} ms`
-            )}`
+                `${duration.toFixed(2)} ms`,
+            )}`,
         );
     } catch (error) {
         console.error("Error:", error.message);

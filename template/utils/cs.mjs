@@ -9,5 +9,5 @@ const runCommand = `dotnet run --project ${path.join(srcDir, "cs")}`;
 await run({
     sourceFilePath,
     runCommand,
-    needsCompile: false
+    needsCompile: false,
 });

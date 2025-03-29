@@ -55,7 +55,7 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
 
             const output = execSync(runWithInputCmd, {
                 signal: AbortSignal.timeout(2000),
-                cwd: srcDir
+                cwd: srcDir,
             }).toString();
 
             const end = performance.now();
@@ -72,7 +72,7 @@ function runWithTestCases(runCommand, testCasesdir, testCases) {
                 duration: (end - start).toFixed(0),
                 succeeded: succeeded,
                 output: output,
-                answer: testCase.output
+                answer: testCase.output,
             };
             printTestCaseResult(t);
         } catch (error) {

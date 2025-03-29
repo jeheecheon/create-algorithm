@@ -13,5 +13,5 @@ await run({
     compileResultPath,
     sourceFilePath,
     compileCommand,
-    runCommand
+    runCommand,
 });

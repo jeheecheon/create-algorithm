@@ -9,5 +9,5 @@ const runCommand = "python py/Main.py";
 await run({
     sourceFilePath,
     runCommand,
-    needsCompile: false
+    needsCompile: false,
 });

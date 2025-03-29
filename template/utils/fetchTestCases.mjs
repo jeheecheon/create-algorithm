@@ -1,7 +1,7 @@
-import * as cheerio from "cheerio";
-import { performance } from "perf_hooks";
-import ora from "ora";
 import chalk from "chalk";
+import * as cheerio from "cheerio";
+import ora from "ora";
+import { performance } from "perf_hooks";
 
 export async function fetchBaekJoonTestCases(id) {
     const spinner = ora("Fetching Test Case...").start();
@@ -12,8 +12,8 @@ export async function fetchBaekJoonTestCases(id) {
 
     return await fetch(url, {
         headers: {
-            "User-Agent": userAgent
-        }
+            "User-Agent": userAgent,
+        },
     })
         .then((response) => {
             if (response.status === 404) {
