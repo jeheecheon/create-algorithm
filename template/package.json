@@ -3,7 +3,7 @@
         "js": "nodemon --watch src --ext js,txt --exec \"node src/js/main.js\"",
         "ts": "nodemon --watch src --ext ts,txt --exec \"npm run ts:exec\"",
         "ts:exec": "concurrently \"npm run ts:lint\" \"npm run ts:run\"",
-        "ts:lint": "eslint src/ts/main.ts --fix",
+        "ts:lint": "eslint src/ts/main.ts",
         "ts:run": "ts-node src/ts/main.ts",
         "c": "nodemon --watch src --ext c,txt --exec \"node ./utils/c.mjs\"",
         "cpp": "nodemon --watch src --ext cpp,txt --exec \"node ./utils/cpp.mjs\"",
@@ -12,17 +12,14 @@
         "py": "nodemon --watch src --ext py,txt --exec \"node ./utils/py.mjs\"",
         "cs": "nodemon --watch src --ext cs,txt --exec \"node ./utils/cs.mjs\""
     },
-    "nodemonConfig": {
-        "events": {
-            "start": "node -e console.clear()"
-        }
-    },
     "devDependencies": {
         "@eslint/js": "^9.8.0",
         "@types/eslint": "^9.6.0",
-        "@types/node": "^22.0.0",
+        "@types/node": "^22.13.14",
         "concurrently": "^8.2.2",
         "eslint": "^8.57.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-prettier": "^5.2.5",
         "globals": "^15.8.0",
         "nodemon": "^3.1.4",
         "ts-node": "^10.9.2",
