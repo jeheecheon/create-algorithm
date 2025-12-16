@@ -1,9 +1,9 @@
-const input = require("fs")
+const lines = require("fs")
     .readFileSync(process.platform === "linux" ? "/dev/stdin" : "./src/input.txt")
     .toString()
-    .trim()
     .split("\n")
-    .map((line) => line.trim());
+    .map((line) => line.trim())
+    .filter((line) => !!line);
 
 (function solve() {
     console.log("print answer here");
