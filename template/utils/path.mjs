@@ -1,7 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 
-export const getIsWindows = () => process.platform === "win32";
+export const isWindows = () => process.platform === "win32";
 
 const __filename = fileURLToPath(import.meta.url);
 const utilsPath = path.dirname(__filename);
